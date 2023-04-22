@@ -1,8 +1,8 @@
-export default function TodoItem() {
+export default function TodoItem({ text, id}) {
 
     return (
         <div>
-            <li></li>
+            <li>{text}</li>
         </div>
     )
 }
