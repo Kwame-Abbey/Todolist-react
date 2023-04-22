@@ -1,28 +1,25 @@
 import { useState } from "react";
 
 export default function InputArea({ onAdd }) {
+  const [inputText, setInputText] = useState("");
 
-    const [inputText, setInputText] = useState("")
-    
-    function handleChange(event) {
-        const newValue = event.target.value
+  function handleChange(event) {
+    const newValue = event.target.value;
 
-        setInputText(newValue)
-    }
+    setInputText(newValue);
+  }
 
-    return (
-        <div className="form">
-        <input 
-        onChange={handleChange}
-        type="text"  
-        value={inputText}
-        />
-        <button onClick={() => (
-            onAdd(inputText)
-        )}>
-          <span>Add</span>
-        </button>
-      </div>
-    );
-    
+  return (
+    <div className="form">
+      <input onChange={handleChange} type="text" value={inputText} />
+      <button
+        onClick={() => {
+          onAdd(inputText);
+          setInputText("");
+        }}
+      >
+        <span>Add</span>
+      </button>
+    </div>
+  );
 }
