@@ -1,7 +1,10 @@
-export default function TodoItem({ text, id}) {
+export default function TodoItem({ text, id, onDelete}) {
+
 
     return (
-        <div>
+        <div onClick={() => {
+            onDelete(id)
+        }}>
             <li>{text}</li>
         </div>
     )

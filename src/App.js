@@ -15,6 +15,12 @@ function App() {
     ])
   }
 
+  function deleteItem(id) {
+    setItems(items.filter((item, index) => {
+      return index !== id
+    }))
+  }
+
   return (
     <div className="container">
       <div className="heading">
@@ -30,6 +36,7 @@ function App() {
               key={index}
               id={index}
               text={todoItem}
+              onDelete={deleteItem}
             />
           ))
             
